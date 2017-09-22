@@ -1,9 +1,11 @@
+pipeline {
+  agent any 
+  }
 stage('CodePull'){
-  agent none
   steps{
     dir ('ios'){ //criar ou entrar no diretorio, se exister ele entra, se nao, ele cria
       checkout([$class: 'GitSCM',
-                  branches: [[name: 'master']], //branche a ser usada
+                  branches: [[name: 'master']], //branch a ser usada
                   doGenerateSubmoduleConfigurations: false,
                   extensions:
                   [[
@@ -21,4 +23,5 @@ stage('CodePull'){
                 ])
     }
   }
+}
 }
