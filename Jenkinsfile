@@ -1,5 +1,6 @@
 pipeline {
   agent any
+  stages{
 stage('CodePull'){
   steps{
     dir ('ios'){ //criar ou entrar no diretorio, se exister ele entra, se nao, ele cria
@@ -20,7 +21,8 @@ stage('CodePull'){
                     url: 'https://github.com/cs-anderson-cavalcante/teste-jenkinsfile.git'
                   ]]
                 ])
+      }
     }
   }
-}
+ }
 }
