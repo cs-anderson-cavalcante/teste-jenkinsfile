@@ -1,6 +1,5 @@
 pipeline {
-  agent any 
-  }
+  agent any
 stage('CodePull'){
   steps{
     dir ('ios'){ //criar ou entrar no diretorio, se exister ele entra, se nao, ele cria
