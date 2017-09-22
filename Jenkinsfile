@@ -1,13 +1,13 @@
 stage('CodePull'){
   agent none
   steps{
-    dir ('ios'){
+    dir ('ios'){ //criar ou entrar no diretorio, se exister ele entra, se nao, ele cria
       checkout([$class: 'GitSCM',
-                  branches: [[name: '${gitAppSourceBranch}']],
+                  branches: [[name: 'master']], //branche a ser usada
                   doGenerateSubmoduleConfigurations: false,
                   extensions:
                   [[
-                      $class: 'CloneOption',
+                      $class: 'CloneOption', //padrão do codigo
                       depth: 1,
                       noTags: false,
                       reference: '',
